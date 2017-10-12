@@ -1,0 +1,524 @@
+---
+layout: workshop      # DON'T CHANGE THIS.
+root: .               # DON'T CHANGE THIS.
+venue:        "Stellenbosch University"  # brief name of host site without address (e.g., "Euphoric State University")
+address:      "E-classroom, Stellenbosch University Library (J.S. Gericke Library), Stellenbosch University, JS Marais Square, c/o Victoria and Ryneveld Streets, Stellenbosch, South Africa"  # street address of workshop (e.g., "123 Forth Street, Blimingen, Euphoria")
+country:       "za" # country (lowercase two-letter ISO code such as "fr" - see https://en.wikipedia.org/wiki/ISO_3166-1)
+language:     "en" # language (lowercase two-letter ISO code such as "fr" - see https://en.wikipedia.org/wiki/ISO_639-1)
+latlng:       "-26.687123,27.0920373"   # fractional latitude and longitude (e.g., "41.7901128,-87.6007318"; you can use http://www.latlong.net/)
+humandate:     "6 - 8 November, 2017" # human-readable date (e.g., "Feb 17-18, 2020")
+humantime:   "Nov 6-7 from 08:30 to 16:00, Nov 8 from 08:30 - 12:00" # human-readable time (e.g., "9:00 am - 4:30 pm")
+startdate:      2017-11-06 # use YYYY-MM-DD format like 2015-01-01
+enddate:         2017-11-08 # use YYYY-MM-DD format like 2015-01-02
+instructor:  ["Angelique van Rensburg","Amy Hodge", "Ian van der Linde", "Juan Steyn"]  # list of names like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
+helper:     ["TODO: Fill in helpers list"] # list of names like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
+contact:    "ivdl@sun.ac.za" # contact email address for workshop organizer, such as "grace@hopper.org"
+etherpad:         http://pad.software-carpentry.org/2017-11-06-SUN-DC # optional (insert the URL for your Etherpad if you're using one)
+eventbrite:       # optional (insert the alphanumeric key for Eventbrite registration, e.g., "1234567890AB")
+day1_am: "Digital Scholarship & Data organisation in spreadsheets"
+day1_pm: "Data cleaning with OpenRefine"
+day2_am: "Data cleaning with OpenRefine"
+day2_pm: "Data analysis and visualization in R"
+day3_am: "Data analysis and visualization in R"
+---
+<!--
+  HEADER
+
+  Edit the values in the block above to be appropriate for your
+  workshop.  Run 'tools/check' *before* committing to make sure that
+  changes are good.
+-->
+
+<!--
+  EVENTBRITE
+
+  This block includes the Eventbrite registration widget if
+  'eventbrite' has been set in the header.  You can delete it if you
+  are not using Eventbrite, or leave it in, since it will not be
+  displayed if the 'eventbrite' field in the header is not set.
+-->
+{% if page.eventbrite %}
+<iframe
+  src="https://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt"
+  frameborder="0"
+  width="100%"
+  height="206px"
+  scrolling="auto">
+</iframe>
+{% endif %}
+
+<h2>General Information</h2>
+
+<!--
+  INTRODUCTION
+
+  Edit the general explanatory paragraph below if you want to change
+  the pitch.
+-->
+<p>Thank your for your interest in this Data Carpentry workshop.</> 
+</br>
+
+<p>Researchers, students, and librarians are increasingly starting to engage in projects with more complex computing components
+  to harness the power of larger and often open datasets and technology. Those who are interested in pursuing research 
+  projects often find themselves in unknown territory without a clear idea of a good starting point for acquiring new skills or
+  finding potential collaborators. One of the aims of the <a href="https://goo.gl/MedPb8" target="_blank">South African Center for Digital Language Resources (SADiLaR)</a> as well as the <a href="http://digitalhumanities.org.za/" target="_blank">Digital Humanities Organisation of Southern Africa (DHASA)</a> is to build local communities to both facilitate collaboration and 
+  skills transfer.</p>
+</br>
+<h2>Workshop Aims</h2>
+<p>This workshop aims to provide a broad introduction to the following concepts and tools</p>
+ <ul>
+   <li>Introduction to Digital Scholarship</li>
+   <li>Research Data Management</li>
+   <li>Data formatting, cleaning, and manipulation</li>
+   <li>Introduction to R for analysing data</li>
+  </ul>
+<p>The workshop is funded by the <a href="https://goo.gl/MedPb8" target="_blank">South African Center for Digital Language Resources</a></p>
+<p>The workshop is organised by the <a href="http://library.sun.ac.za" target="_blank">Stellenbosch University Library and Information services</a> and the <a href="http://infoteg.sun.ac.za" target="_blank">Stelenbosch Information Technology Division</a> in collaboration with SADiLaR</p>
+</br>
+<h2>Registration and other information</h2>
+<p><strong>Please register</strong> for the workshop through this online form:  <a href="https://goo.gl/SMjRcd" target="_blank">https://goo.gl/SMjRcd</a> by 27 July 2017 . Space is limited, if you have any questions please contact <a href="mailto:ivdl@sun.ac.za?Subject=SUN Data Carpentry workshop 6 November 2017" target="_top">ivdl@sun.ac.za</a>. </p>
+</br>
+<p>
+<a href=http://datacarpentry.org target="_blank">Data Carpentry</a> workshops are for any graduate student, staff member or researcher 
+who has data they want to analyze, and no prior computational experience is required. 
+This hands-on workshop teaches basic concepts, skills and tools for working more 
+effectively with data. 
+</p>
+<p>
+We will cover {{page.day1_am}}, {{page.day1_pm}}, {{page.day2_am}} and {{page.day2_pm}}.
+
+Participants should bring their laptops and plan to participate actively. By the end of the workshop learners should be able to more effectively manage and analyze data and be able to apply the tools and approaches directly to their ongoing research.
+</p>
+
+<!--
+  AUDIENCE
+
+  Explain who your audience is.  (In particular, tell readers if the
+  workshop is only open to people from a particular institution.
+-->
+<p>
+  <strong>Who:</strong>
+  The course is aimed at graduate students, staff members and researchers.
+</p>
+
+<!--
+  LOCATION
+
+  This block displays the address and links to maps showing directions
+  if the latitude and longitude of the workshop have been set.  You
+  can use http://itouchmap.com/latlong.html to find the lat/long of an
+  address.
+-->
+{% if page.latlng %}
+<p>
+  <strong>Where:</strong>
+  {{page.address}}.
+  Get directions with
+  <a href="https://goo.gl/HuUxgB" target="_blank">Google Maps</a>.
+</p>
+{% endif %}
+
+<!--
+  SPECIAL REQUIREMENTS
+
+  Modify the block below if there are any special requirements.
+-->
+<p>
+  <strong>Requirements:</strong> Participants must bring a laptop with a 
+  Mac, Linux, or Windows operating sytem (not a tablet, Chromebook, etc.) that they have administrative privileges
+  on. They should have a few specific software packages installed (listed
+  <a href="#setup">below</a>). They are also required to abide by
+  Data Carpentry's
+  <a href="{{site.dc_site}}/code-of-conduct/" target="_blank">Code of Conduct</a>.
+</p>
+
+<!--
+  CONTACT EMAIL ADDRESS
+
+  Display the contact email address set in the header.  If an address
+  isn't set in the header, the Software Carpentry admin address is
+  used.
+-->
+<p>
+  <strong>Contact</strong>:
+  Please mail
+  {% if page.contact %}
+    <a href='mailto:{{page.contact}}'>{{page.contact}}</a>
+  {% else %}
+    <a href='mailto:{{site.contact}}'>{{site.contact}}</a>
+  {% endif %}
+  for more information and if you have any trouble registering for the workshop.
+</p>
+<hr/>
+
+<!--<h2 >Workshop registration </h2>
+<p>Please register for the workshop at: <a href="https://goo.gl/SMjRcd" target="_blank">https://goo.gl/SMjRcd</a> by 27 July 2017<p>
+
+<hr/>
+-->
+
+<!--
+  SCHEDULE
+
+  Show the workshop's schedule.  Edit the items and times in the table
+  to match your plans.  You may also want to change 'Day 1' and 'Day
+  2' to be actual dates or days of the week.
+-->
+<h2>Preliminary Schedule</h2>
+
+<!-- DO NOT EDIT SURVEY LINKS -->
+<p><em>Surveys</em></p>
+<p>Please be sure to complete these surveys before and after the workshop.</p>
+<p><a href='{{ site.dc_pre_survey }}'>Pre-workshop Survey</a></p>
+<p><a href='{{ site.dc_post_survey }}'>Post-workshop Survey</a></p>
+
+
+
+<div class="row">
+  <div class="col-md-6">
+
+    <h3>Day 1</h3>
+    <h4>6 November 2017</h4>
+    <table class="table table-striped">
+       <tr> <td>Morning</td>  <td>{{page.day1_am}}</td> </tr>
+       <tr> <td>Afternoon</td>  <td>{{page.day1_pm}}</td> </tr>
+    </table>
+ <br>
+  <h3>Day 2</h3>
+    <h4>7 November 2017</h4>
+    <table class="table table-striped">
+      <tr> <td>Morning</td>  <td>{{page.day2_am}}</td> </tr>
+      <tr> <td>Afternoon</td>  <td>{{page.day2_pm}}</td> </tr>
+    </table>
+     <br>
+
+    <h3>Day 3</h3>
+    <h4>8 November 2017</h4>
+    <table class="table table-striped">
+      <tr> <td>Morning</td>  <td>{{page.day3_am}}</td> </tr>
+    </table>
+ </div>
+</div>
+
+ <p id="meals">
+  <strong>Meals:</strong>
+<p> Lunch will be catered for.</p>
+<p>Tea/Coffee will be provided according to schedule.
+</p>
+<!--
+  ETHERPAD
+
+  Display the Etherpad for the workshop.  You can set this up in
+  advance or on the first day; either way, make sure you push changes
+  to GitHub after you have its URL.  To create an Etherpad, go to
+
+      http://etherpad.mozilla.org/YYYY-MM-DD-site
+
+  where 'YYYY-MM-DD-site' is the identifier for your workshop (e.g.,
+  '2015-06-10-esu'.
+-->
+{% if page.etherpad %}
+<p>
+  <strong>Etherpad:</strong> <a href="{{page.etherpad}}">{{page.etherpad}}</a>.
+  <br/>
+  We will use this Etherpad for chatting, taking notes, and sharing URLs and bits of code.
+</p>
+{% endif %}
+
+<hr/>
+
+
+<h2 >Detail Programme </h2>
+
+
+<div class="row">
+  <div class="col-md-6">
+    <h3>Day 1 - 6 November 2017</h3>
+    <table class="table table-striped">
+      <tr> <td>08:30</td>  <td>Coffee, tea and installations</td></tr>
+      <tr> <td>09:00</td>  <td>Digital Scholarship</td> </tr>
+      <tr> <td>10:00</td>  <td>Coffee and tea break</td></tr>
+      <tr> <td>10:20</td>  <td>Introduction to data organisation in spreadsheets</td> </tr>
+      <tr> <td>12:00</td>  <td>Lunch</td> </tr>
+      <tr> <td>13:00</td>  <td>Quality control and data manipulation in spreadsheets</td> </tr>
+      <tr> <td>14:30</td>  <td>Coffee and tea break</td> </tr>
+      <tr> <td>14:50</td>  <td>Introduction to OpenRefine</td> </tr>
+      <tr> <td>16:15</td>  <td>Wrap-up</td></tr>
+    </table>
+  </div>
+  
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <h3>Day 2 - 7 November 2017</h3>
+    <table class="table table-striped">
+      <tr> <td>08:30</td>  <td>Coffee and tea</td> </tr>
+      <tr> <td>09:00</td>  <td>Data cleaning in OpenRefine</td> </tr>
+      <tr> <td>10:30</td>  <td>Coffee and tea break</td></tr>
+      <tr> <td>10:50</td>  <td>Introduction to R</td> </tr>
+      <tr> <td>12:15</td>  <td>Lunch</td></tr>
+      <tr> <td>13:15</td>  <td>Starting with data in R</td> </tr>
+      <tr> <td>14:45</td>  <td>Coffee and tea Break</td> </tr>
+      <tr> <td>15:00</td>  <td>Manipulating data in R</td> </tr>
+      <tr> <td>16:15</td>  <td>Wrap-up</td> </tr>
+    </table>
+  </div>
+  
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <h3>Day 3 - 8 November 2017</h3>
+    <table class="table table-striped">
+      <tr> <td>08:30</td> <td>Coffee and tea </td> </tr>
+      <tr> <td>09:00</td> <td>Visualising data in R</td> </tr>
+      <tr> <td>10:30</td> <td>Coffee and tea Break</td></tr>
+      <tr> <td>10:50</td> <td>Visualising data in R</td> </tr>
+      <tr> <td>12:00</td> <td>Finish</td></tr>
+    </table>
+  </div>
+  
+</div>
+
+<h2 id="syllabus">Syllabus</h2>
+
+<h3 id="syllabus-sql">Research Data Management and Workflows</h3>
+    <ul>
+      <li>Changing Research Landscape</li>
+      <li>FAIR - Data Principles</li>
+      <li>101 - innovations</li>
+      <li>My own workflow</li>
+    </ul>
+
+
+<h3 id="syllabus-sql">Using spreadsheet programs for scientific data</h3>
+    <ul>
+      <li>Formatting data &amp; problems</li>
+      <li>Dates as data</li>
+      <li>Quality control</li>
+      <li>Exporting data</li>
+      <li>Data format caveats</li>
+      <li>Cleaning data with OpenRefine</li>
+    </ul>
+
+<!-- <div id="spreadsheet"> <!-- Start of 'Python' section. Remove the third paragraph if
+           the workshop will teach Python using something other than
+           the IPython notebook.
+           Details at http://ipython.org/ipython-doc/2/install/install.html#browser-compatibility -->
+ <!-- <h3>Spreadsheet Program</h3>
+<p>For this workshop you will need a spreadsheet program. Many people already have
+Microsoft Excel installed, and if you do, you're set! </p>
+
+<p>If you need a spreadsheet
+program, there are a few other options, like OpenOffice and LibreOffice. Install
+instructions for LibreOffice, which is free and open source, are here.
+       <ol>
+          <li><b>Download the Installer</b>
+        <br>Install LibreOffice by going to the <a href=https://www.libreoffice.org/download/libreoffice-fresh/>installation page</a>. The version for Windows
+should automatically be selected. Click on the button below "Main Installer" <b>Download Version x.y.z</b>. You
+will go to a page that asks about a donation, but you don't need to make one.
+Your download should begin automatically.
+          <li><b>Install LibreOffice</b>
+            <br>Once the installer is downloaded, double click on it and it should install.
+<li>To use LibreOffice, double click on the icon and it will open.
+
+</div>
+
+-->
+
+<div id="openrefine">
+<h3>OpenRefine</h3>
+<p>OpenRefine (previously Google Refine) is a tool for data cleaning
+that runs through a web browser, and any browser -
+Safari, Firefox, Chrome, Explorer - should work fine.
+You will need to download OpenRefine and install it,
+and when you open it, it will run through the browser, but you don't need
+an internet connection, and the data will all be stored on your computer.
+<!-- 
+
+</p>
+    <div class="row">
+    <div class="col-md-6">
+      <h4 id="or-win">Windows</h4>
+        <ol>
+            <li>Go to the OpenRefine <a href="http://openrefine.org/download.html">download
+            page</a>
+            <li>Click on <i>Windows kit</i> to download the install file
+              <li>To use it, unzip, and double-click on openrefine.exe (if you're having issues
+with openrefine.exe try refine.bat instead)
+<li>OpenRefine will then open in your web browser.
+<li>If it doesn't open automatically, open a web broswer after you've started the program and go to the URL <code>http://localhost:3333</code> and you should see OpenRefine.
+</ol>
+</div>
+
+    <div class="col-md-6">
+      <h4 id="or-mac">Mac</h4>
+        <ol>
+            <li>Go to the OpenRefine <a href="http://openrefine.org/download.html">download
+            page</a>
+            <li>Click on <i>Mac kit</i> to download the install file
+            <li>To use it, unzip, drag the openrefine icon to the Applications folder, and then double click on the icon.
+            <li>OpenRefine will then open in your web browser.
+            <li>If it doesn't open automatically, open a web broswer after you've started the program and go to the URL <code>http://localhost:3333</code> and you should see OpenRefine.
+          </ol>
+      </div>
+
+    <div class="col-md-6">
+      <h4 id="or-linux">Linux</h4>
+        <ol>
+            <li>Go to the OpenRefine <a href="http://openrefine.org/download.html">download
+            page</a>
+            <li>Click on <i>Linux kit</i> to download the install file
+            <li>To use it, unzip, then type ./refine in a terminal to start
+            <li>OpenRefine will then open in your web browser.
+            <li>If it doesn't open automatically, open a web broswer after you've started the program and go to the URL <code>http://localhost:3333</code> and you should see OpenRefine.
+          </ol>
+</div>
+</div>
+
+
+<p>OpenRefine may require you to install Java, please follow the instructions it provides to do so.</p>
+</div>
+-->
+
+    <h3>R for data analysis and visualization</h3>
+    <ul>
+      <li>Introduction to R</li>
+      <li>Starting with data</li>
+      <li>Aggregating and analyzing data with dplyr</li>
+      <li>Data visualization with ggplot2</li>
+      <li>R and Databases</li>
+    </ul>
+ 
+
+<!--
+  SYLLABUS
+
+
+
+  Show what topics will be covered.
+
+  1. If your workshop is R rather than Python, remove the comment
+     around that section and put a comment around the Python section.
+  2. Some workshops will delete SQL.
+  3. Please make sure the list of topics is synchronized with what you
+     intend to teach.
+  4. You may need to move the div's with class="col-md-6" around inside
+     the div's with class="row" to balance the multi-column layout.
+
+  This is one of the places where people frequently make mistakes, so
+  please preview your site before committing, and make sure to run
+  'tools/check' as well.
+-->
+<!--
+<h2>Syllabus</h2>
+
+<div class="row">
+  <div class="col-md-6">
+    <h3>The Unix Shell</h3>
+    <ul>
+      <li>Files and directories</li>
+      <li>History and tab completion</li>
+      <li>Pipes and redirection</li>
+      <li>Looping over files</li>
+      <li>Creating and running shell scripts</li>
+      <li>Finding things</li>
+      <li><a href="{{site.swc_lessons}}/ref/01-shell.html">Reference...</a></li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <h3>Programming in Python</h3>
+    <ul>
+      <li>Using libraries</li>
+      <li>Working with arrays</li>
+      <li>Reading and plotting data</li>
+      <li>Creating and using functions</li>
+      <li>Loops and conditionals</li>
+      <li>Defensive programming</li>
+      <li>Using Python from the command line</li>
+      <li><a href="{{site.swc_lessons}}/ref/03-python.html">Reference...</a></li>
+    </ul>
+  </div>
+
+  <div class="col-md-6">
+    <h3>Programming in R</h3>
+    <ul>
+      <li>Working with vectors and data frames</li>
+      <li>Reading and plotting data</li>
+      <li>Creating and using functions</li>
+      <li>Loops and conditionals</li>
+      <li>Using R from the command line</li>
+      <li><a href="{{site.swc_lessons}}/ref/06-R.html">Reference...</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <h3>Version Control with Git</h3>
+    <ul>
+      <li>Creating a repository</li>
+      <li>Recording changes to files: <code>add</code>, <code>commit</code>, ...</li>
+      <li>Viewing changes: <code>status</code>, <code>diff</code>, ...</li>
+      <li>Ignoring files</li>
+      <li>Working on the web: <code>clone</code>, <code>pull</code>, <code>push</code>, ...</li>
+      <li>Resolving conflicts</li>
+      <li>Open licenses</li>
+      <li>Where to host work, and why</li>
+      <li><a href="{{site.swc_lessons}}/ref/02-git.html">Reference...</a></li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <h3>Managing Data with SQL</h3>
+    <ul>
+      <li>Reading and sorting data</li>
+      <li>Filtering with <code>where</code></li>
+      <li>Calculating new values on the fly</li>
+      <li>Handling missing values</li>
+      <li>Combining values using aggregation</li>
+      <li>Combining information from multiple tables using <code>join</code></li>
+      <li>Creating, modifying, and deleting data</li>
+      <li>Programming with databases</li>
+      <li><a href="{{site.swc_lessons}}/ref/04-sql.html">Reference...</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<hr/>
+-->
+
+<!--
+  SETUP
+
+  Delete irrelevant sections from the setup instructions.  Each
+  section is inside a 'div' without any classes to make the beginning
+  and end easier to find.
+
+  This is the other place where people frequently make mistakes, so
+  please preview your site before committing, and make sure to run
+  'tools/check' as well.
+-->
+
+<h2 id="setup">Setup</h2>
+
+<p>
+To participate in a Data Carpentry based workshop, you will need working copies of the 
+described software. Please make sure to install everything (or at least to download 
+the installers) before the start of your workshop. Participants should bring and use 
+their own laptops to insure the proper setup of tools for an efficient workflow 
+once you leave the workshop.
+<p>
+Please follow these <a href=install.html>Setup Instructions</a>.
+
+<p>
+  We maintain a list of common issues that occur during installation as a reference for instructors
+  that may be useful on the
+  <a href = "https://github.com/swcarpentry/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
+</p>
+</br>
+<img src="https://github.com/ianvdl/2017-11-06-SUN-DC/blob/gh-pages/img/SADiLaR2.png?raw=true" alt="SADiLaR-SUN" width="100%" >
+<img src="https://github.com/ianvdl/2017-11-06-SUN-DC/blob/gh-pages/img/DHASA.png?raw=true" alt="DHASA" width="50%" >
+
